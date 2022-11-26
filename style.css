@@ -1,0 +1,62 @@
+html{
+    height: 100%;
+}
+
+header{
+    z-index: 1000;
+    min-height: 60px;
+}
+footer{
+    z-index: 1000;
+}
+
+body{
+    height: 100%;
+}
+main{
+    height: 100%;
+}
+
+.items-banner{
+    padding: 6% 5% 5% 5%;
+}
+
+/* Sidebar nav 標題的樣式設定 */
+.sidebar-brand{
+    padding: 16px;
+}
+.sidebar-brand > a{
+    color: black;
+    text-decoration: none;
+}
+/* Sidebar nav 的父階層 menu 樣式設定 */
+.sidenav-category-item > a{
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+.sidenav-category-item>.btn:hover{
+    background-color: yellow;
+}
+
+.sidenav-category-item>.btn:focus{
+    background-color: blue;
+}
+.sidenav-icon{
+    text-align: center;
+}
+.sidenav-text {
+    text-align: center;
+}
+
+
+/* Sidebar nav 的子階層 menuitem 樣式設定 */
+.sidenav-item-list > .list-group-item{
+    padding: 12px;
+}
+.sidenav-detail-item > a{
+    padding: 16px;
+    color: black;
+    text-decoration: none;
+}
+
