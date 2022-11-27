@@ -15,11 +15,11 @@ body{
     height: 100%;
 }
 main{
-    height: 100%;
+    padding-top: 7%;
 }
 section{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 8%;
+    margin-bottom: 8%;
     /* border-style: solid;
     border-color: white; */
 }
@@ -42,14 +42,14 @@ section{
 }
 .contact-Us:hover{
     cursor: pointer;
-    background-color: yellow;
+    background-color: #FEAA34;
     text-decoration:underline;
 }
 
 
 
 .bg-system{
-    background-color: yellow;
+    background-color: #FEAA34;
 }
 
 @media (max-width: 991.98px) {
@@ -66,11 +66,44 @@ section{
     }
 } 
 
-
+.intro-title{
+    margin-bottom: -50px;
+}
 .intro-item{
     padding-top: 50px;
 }
 
+.advantage-title{
+    margin-bottom: -50px;
+}
 .advantage-item{
     padding-top: 50px;
+}
+
+.option-title{
+    margin-bottom: -50px;
+}
+.option-item{
+    padding-top: 50px;
+}
+.option-divider{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: rgba(255, 255, 255, 0.5);
+    border-bottom-style: solid;
+}
+
+h5{
+    color: #FEAA34 ;
+}
+h6{
+    color: #FEAA34;
+}
+
+.Product-checkout{
+    margin-top: 20px;
+}
+
+.ref-link > a{
+    text-decoration: none;
 }
