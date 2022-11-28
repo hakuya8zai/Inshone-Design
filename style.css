@@ -104,6 +104,14 @@ h6{
     margin-top: 20px;
 }
 
-.ref-link > a{
+.ref-link > a,.footer-link > a{
     text-decoration: none;
+}
+
+.Footer-note-Intro, .Footer-note-Service{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.Footer-note-Service > div > div{
+    padding-bottom: 5%;
 }
