@@ -35,31 +35,141 @@
               ></iframe>
             </div>
             <div class="project-process">
-              <h3>專案合作流程</h5>
-                <div class="project-steps">
-                  
+              <h3>專案合作流程</h3>
+              <div class="project-steps mt-4 row">
+                <div class="step1 col-12 col-md-6 mb-3">
+                  <h6 class="mb-3 border-bottom border-warning pb-1">
+                    <span>Step01</span>
+                    <span class="text-light text-end">需求接洽</span>
+                  </h6>
+                  <p>1. 提供時程報價</p>
+                  <p>2. 開案確認簽約</p>
                 </div>
+                <div class="step2 col-12 col-md-6 mb-3">
+                  <h6 class="mb-3 border-bottom border-warning pb-1">
+                    <span>Step02</span>
+                    <span class="text-light">前期規劃</span>
+                  </h6>
+                  <p>1. 企劃大綱提案</p>
+                  <p>2. 文案腳本擬定</p>
+                  <p>3. 分鏡草稿製作</p>
+                </div>
+                <div class="step3 col-12 col-md-6 mb-3">
+                  <h6 class="mb-3 border-bottom border-warning pb-1">
+                    <span>Step03</span>
+                    <span class="text-light">拍攝執行</span>
+                  </h6>
+                  <p>1. 影像拍攝</p>
+                  <p>2. 收音</p>
+                  <p>3. 演員引導</p>
+                </div>
+                <div class="step4 col-12 col-md-6 mb-3">
+                  <h6 class="mb-3 border-bottom border-warning pb-1">
+                    <span>Step04</span>
+                    <span class="text-light">後期製作</span>
+                  </h6>
+                  <p>1. 剪接版本挑選</p>
+                  <p>2. 調光、混音</p>
+                  <p>3. 兩次免費修改</p>
+                  <p>4. 結案</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-lg-5 col-10 text-white choose-right">
             <div class="project-description">
-              <h2>詳細選擇你的<br>標準規格影像製作方案</h2>
-              <p>
-                製作時程 3 週 - 1 個月
-              </p>
+              <h2>詳細選擇你的<br />標準規格影像製作方案</h2>
+              <p>製作時程 3 週 - 1 個月</p>
             </div>
-            <div class="prject-time-range border-top pt-3">
-              <p>需要的影片長度？</p>
-              <a href="#">如何評量我需要的長度？</a>
+            <div class="prject-time-range border-top pt-3 mb-3">
+              <h5>需要的影片品質？</h5>
+              <a href="#" class="link-light">如何評量我需要的品質？</a>
               <div class="col-12 d-grid Product-checkout">
-                <button
-                  type="button"
-                  class="btn btn-large btn-outline-light"
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option1"
+                  autocomplete="off"
+                  value="15000"
+                  checked
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="option1"
                 >
-                  <p>五分鐘以內<span class="ms-5">0</span></p>
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start"
+                      >標準畫質 2k 1080p</span
+                    >
+                    <span class="col-md-6 col-12 text-end">
+                      <span>+</span>
+                      <span id="video-definition1-cost">15000</span>
+                    </span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option2"
+                  autocomplete="off"
+                  value="40000"
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="option2"
+                >
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start"
+                      >超高畫質 4k 2160p</span
+                    >
+                    <span class="col-md-6 col-12 text-end">
+                      <span>+</span>
+                      <span>40000</span>
+                    </span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="options"
+                  id="option3"
+                  autocomplete="off"
+                  value="100000"
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="option3"
+                >
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start"
+                      >極限畫質 8k 4320p</span
+                    >
+                    <span class="col-md-6 col-12 text-end">
+                      <span>+</span>
+                      <span>100000</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="project-cost-total border-top pt-3 row">
+              <div class="col-md-6">
+                <span class="row pt-2">
+                  <span class="text-start col-6">合計</span>
+                  <span class="text-end col-6">
+                    <span>NT</span>
+                    <span id="total-cost">0</span>
+                    <span>$</span>
+                  </span>
+                </span>
+              </div>
+              <div class="col-md-6 d-grid">
+                <button type="button" class="btn btn-warning d-grid">
+                  加入購物袋
                 </button>
               </div>
-
             </div>
           </div>
         </section>
