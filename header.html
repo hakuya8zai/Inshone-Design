@@ -22,9 +22,39 @@
         />
         影相設計
       </a>
-      <a class="navbar-brand d-lg-none" href="#">
-        <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
-      </a>
+
+      <div class="dropdown Rwd-small-cart mb-0 d-lg-none me-4">
+        <a
+          class="shopping-cart btn"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
+        </a>
+
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          id="small-cart-list"
+          aria-labelledby="dropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">
+              <span>
+                <span><img src="./Image/One.svg" alt="" /></span>
+                <span>Item Name and Sth Else like great</span>
+              </span>
+            </a>
+          </li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div>
+
       <div
         class="collapse navbar-collapse justify-content-lg-end me-2"
         id="HeaderNavToggler"
@@ -41,9 +71,44 @@
           </li>
         </ul>
       </div>
-      <a class="nav-link d-none d-lg-block me-4" href="#">
-        <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
-      </a>
+
+      <div class="dropdown Rwd-large-cart d-none d-lg-block me-4">
+        <a
+          class="shopping-cart btn"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
+        </a>
+
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="dropdownMenuLink"
+          id="big-cart-list"
+        >
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li>
+            <a class="dropdown-item" href="#"
+              >Something else here here here here</a
+            >
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <div class="text-center d-grid">
+              <a
+                role="button"
+                class="btn btn-primary btn-large me-2 ms-2"
+                href="#"
+                >結帳</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="col-lg-1 d-none d-lg-block contact-Us">
       <a class="nav-link mb-1 text-black" href="#">聯絡我們</a>

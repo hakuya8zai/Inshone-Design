@@ -77,26 +77,26 @@
             </div>
           </div>
           <div class="col-lg-5 col-10 text-white choose-right">
-            <div class="project-description">
+            <div class="project-description border-bottom pb-1">
               <h2>詳細選擇你的<br />標準規格影像製作方案</h2>
               <p>製作時程 3 週 - 1 個月</p>
             </div>
-            <div class="prject-time-range border-top pt-3 mb-3">
+            <div class="prject-definition pt-3 mb-3">
               <h5>需要的影片品質？</h5>
               <a href="#" class="link-light">如何評量我需要的品質？</a>
               <div class="col-12 d-grid Product-checkout">
                 <input
                   type="radio"
                   class="btn-check"
-                  name="options"
-                  id="option1"
+                  name="definition-options"
+                  id="definition-option1"
                   autocomplete="off"
                   value="15000"
                   checked
                 />
                 <label
                   class="btn btn-large btn-outline-light p-3 mt-2"
-                  for="option1"
+                  for="definition-option1"
                 >
                   <span class="row">
                     <span class="col-md-6 col-12 text-start"
@@ -111,14 +111,14 @@
                 <input
                   type="radio"
                   class="btn-check"
-                  name="options"
-                  id="option2"
+                  name="definition-options"
+                  id="definition-option2"
                   autocomplete="off"
                   value="40000"
                 />
                 <label
                   class="btn btn-large btn-outline-light p-3 mt-2"
-                  for="option2"
+                  for="definition-option2"
                 >
                   <span class="row">
                     <span class="col-md-6 col-12 text-start"
@@ -133,14 +133,14 @@
                 <input
                   type="radio"
                   class="btn-check"
-                  name="options"
-                  id="option3"
+                  name="definition-options"
+                  id="definition-option3"
                   autocomplete="off"
                   value="100000"
                 />
                 <label
                   class="btn btn-large btn-outline-light p-3 mt-2"
-                  for="option3"
+                  for="definition-option3"
                 >
                   <span class="row">
                     <span class="col-md-6 col-12 text-start"
@@ -154,6 +154,74 @@
                 </label>
               </div>
             </div>
+            <div class="prject-time-range pt-3 mb-3">
+              <h5>需要的影片長度？</h5>
+              <a href="#" class="link-light">如何評量需要的影片長度？</a>
+              <div class="col-12 d-grid Product-checkout">
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="time-range-options"
+                  id="time-range-option1"
+                  autocomplete="off"
+                  value="1"
+                  checked
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="time-range-option1"
+                >
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start">一分鐘</span>
+                    <span class="col-md-6 col-12 text-end">
+                      <span>x</span>
+                      <span id="video-definition1-cost">1</span>
+                    </span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="time-range-options"
+                  id="time-range-option2"
+                  autocomplete="off"
+                  value="3"
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="time-range-option2"
+                >
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start">五分鐘內</span>
+                    <span class="col-md-6 col-12 text-end">
+                      <span>x</span>
+                      <span>3</span>
+                    </span>
+                  </span>
+                </label>
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="time-range-options"
+                  id="time-range-option3"
+                  autocomplete="off"
+                  value="7"
+                />
+                <label
+                  class="btn btn-large btn-outline-light p-3 mt-2"
+                  for="time-range-option3"
+                >
+                  <span class="row">
+                    <span class="col-md-6 col-12 text-start">十分鐘內</span>
+                    <span class="col-md-6 col-12 text-end">
+                      <span>x</span>
+                      <span>7</span>
+                    </span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
             <div class="project-cost-total border-top pt-3 row">
               <div class="col-md-6">
                 <span class="row pt-2">
@@ -166,7 +234,11 @@
                 </span>
               </div>
               <div class="col-md-6 d-grid">
-                <button type="button" class="btn btn-warning d-grid">
+                <button
+                  type="button"
+                  class="btn btn-warning d-grid"
+                  id="add-items"
+                >
                   加入購物袋
                 </button>
               </div>
@@ -176,6 +248,7 @@
       </content>
     </main>
     <div id="footer">footer</div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
