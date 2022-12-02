@@ -23,16 +23,19 @@ function totalRecal(newCost, newTimeRange){
     console.log(newTimeRange);
     let FinalCost = newCost*newTimeRange;
     console.log(FinalCost);
-    $('#total-cost').text(FinalCost);
+    $('#total-cost-number').text(FinalCost);
 }
 
 
 
 //To do : 好像可以把參數們包成物件丟過來
 function addItem(){
-    let newItem = '<li><a class="dropdown-item" href="#"><span><span><img src="./Image/One.svg" alt="" /></span><span>Item Name and Sth Else like great</span></span></a></li>';
+    let newItemName = $('#standard-name').text();
+    // To do 不知道怎麼 local 存裡面的錢
+    // let newCost = 
+    let newItem = ('<li><a class="dropdown-item" href="#"><span><span><img src="./Image/CartItem.svg" class="mb-1 me-3" alt="" height="48px" width="48px"/></span><span><span>'+ newItemName + '</span></span></span></a></li>');
     $('#big-cart-list').prepend(newItem);
     $('#small-cart-list').prepend(newItem);
-    
+    // $('.cart-total-cost').text(newCost);
 
 }

@@ -28,8 +28,9 @@
           class="shopping-cart btn"
           href="#"
           role="button"
-          id="dropdownMenuLink"
+          id="dropdownMenuLink dropdownMenuClickableOutside"
           data-bs-toggle="dropdown"
+          data-bs-auto-close="inside"
           aria-expanded="false"
         >
           <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
@@ -38,20 +39,27 @@
         <ul
           class="dropdown-menu dropdown-menu-end"
           id="small-cart-list"
-          aria-labelledby="dropdownMenuLink"
+          aria-labelledby="dropdownMenuClickableOutside"
         >
-          <li>
-            <a class="dropdown-item" href="#">
-              <span>
-                <span><img src="./Image/One.svg" alt="" /></span>
-                <span>Item Name and Sth Else like great</span>
-              </span>
-            </a>
-          </li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
+          <li>
+            <span class="dropdown-item-text text-center">
+              <span>合計</span>
+              <span>NT</span>
+              <span class="cart-total-cost">0</span>
+              <span>$</span>
+            </span>
+          </li>
+          <li>
+            <div class="text-center d-grid">
+              <a
+                role="button"
+                class="btn btn-primary btn-large me-2 ms-2"
+                href="#"
+                >結帳</a
+              >
+            </div>
+          </li>
         </ul>
       </div>
 
@@ -77,8 +85,9 @@
           class="shopping-cart btn"
           href="#"
           role="button"
-          id="dropdownMenuLink"
+          id="dropdownMenuLink dropdownMenuClickableOutside"
           data-bs-toggle="dropdown"
+          data-bs-auto-close="inside"
           aria-expanded="false"
         >
           <img src="./Image/Cart.svg" alt="" width="24px" height="24px" />
@@ -86,17 +95,19 @@
 
         <ul
           class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="dropdownMenuLink"
+          aria-labelledby="dropdownMenuClickableOutside"
           id="big-cart-list"
         >
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li>
-            <a class="dropdown-item" href="#"
-              >Something else here here here here</a
-            >
-          </li>
           <li><hr class="dropdown-divider" /></li>
+          <li>
+            <span class="dropdown-item-text text-center">
+              <span>合計</span>
+              <span>NT</span>
+              <span class="cart-total-cost">0</span>
+              <span>$</span>
+            </span>
+          </li>
+
           <li>
             <div class="text-center d-grid">
               <a
