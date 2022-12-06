@@ -4,26 +4,32 @@ $('#header').load('header.html', function(){
 $('#footer').load('footer.html');
 
 
+
+let itemInfo = {
+    TimeRange : $('input[name="time-range-options"]:checked').val(),
+    Definition : $('input[name="definition-options"]:checked').val(),
+};
+planCost(itemInfo);
+
 $('input[name="definition-options"]').click(function(){
-    totalRecal(
-        $(this).val(),
-        $('input[name="time-range-options"]:checked').val()
-        );
+    reGetItemInfo();
+    planCost(itemInfo);
 });
 $('input[name="time-range-options"]').click(function(){
-    totalRecal(
-        $('input[name="definition-options"]:checked').val(),
-        $(this).val()
-        );
+    reGetItemInfo();
+    planCost(itemInfo);
 });
 
+function reGetItemInfo(){
+    itemInfo = {
+        TimeRange : $('input[name="time-range-options"]:checked').val(),
+        Definition : $('input[name="definition-options"]:checked').val(),
+    };
+}
 
-function totalRecal(newCost, newTimeRange){
-    console.log(newCost);
-    console.log(newTimeRange);
-    let FinalCost = newCost*newTimeRange;
-    console.log(FinalCost);
-    $('#total-cost-number').text(FinalCost);
+function planCost(itemInfo){
+    let FinalCost = itemInfo.TimeRange*itemInfo.Definition;
+    $('#plan-cost-int').text(FinalCost);
 }
 
 
@@ -36,6 +42,13 @@ function addItem(){
     let newItem = ('<li><a class="dropdown-item" href="#"><span><span><img src="./Image/CartItem.svg" class="mb-1 me-3" alt="" height="48px" width="48px"/></span><span><span>'+ newItemName + '</span></span></span></a></li>');
     $('#big-cart-list').prepend(newItem);
     $('#small-cart-list').prepend(newItem);
-    // $('.cart-total-cost').text(newCost);
+    let newPC = parseInt($('#plan-cost-int').text());
+    console.log(newPC);
+    // To do 這個有兩個
+    let oldTC = parseInt($('#smCart-total-cost').text());
+    console.log(oldTC);
+    let newTC = parseInt(newPC) + parseInt(oldTC);
+    console.log(newTC);
+    $('.cart-total-cost').text(newTC);
 
 }
