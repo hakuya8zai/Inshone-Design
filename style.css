@@ -23,6 +23,18 @@ section{
     /* border-style: solid;
     border-color: white; */
 }
+img {  
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
 
 /* Design System Color */
 .design-white{
@@ -118,4 +130,13 @@ h6{
 
 .project-process {
     padding-top: 5%;
+}
+
+/* 大小購物車寬度 */
+#small-cart-list, #big-cart-list {
+    min-width: 330px;
+}
+.cartItem-subtitle{
+    color: gray;
+    font-size: 0.8rem;
 }
