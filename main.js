@@ -28,8 +28,8 @@ function loadAllCartItem(){
             let loadingItem = LocalCartObject[i];
             console.log("loadingItem="+loadingItem.id);
     
-            let smItemTemp = ('<li><a class="sm-dropdown-item dropdown-item" href="#" data-plan-id="'+ loadingItem.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + loadingItem.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
-            let bgItemTemp = ('<li><a class="bg-dropdown-item dropdown-item" href="#" data-plan-id="'+ loadingItem.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + loadingItem.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
+            let smItemTemp = ('<li><a class="sm-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="'+ loadingItem.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + loadingItem.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
+            let bgItemTemp = ('<li><a class="bg-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="'+ loadingItem.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + loadingItem.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
             $('#big-cart-list').prepend(bgItemTemp);
             $('#small-cart-list').prepend(smItemTemp);    
             $('.sm-dropdown-item[data-plan-id="'+ loadingItem.id +'"]').click(function(){

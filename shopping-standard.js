@@ -1,16 +1,20 @@
 // 載入此頁時，如果是新的 Plan 則預設勾選不動並建立一個 Object 儲存它，如果是載入特定 Data 則套用 Data 選項
 // 變更選項時，同步更新資料到 Object 內，如果為購物車內資料則同步存入 LocalStorage，如果是新 Object 則是等到最終送出才決定
-$('#add-items').click(addItem);
+// localStorage.clear();
+// StandardPlan.NextId = -1;
 
 // 如果是新頁面，要儲存時，建立一個新物件並，獲取現在（html預設）的選項
 const PageFrom = window.localStorage.getItem('PlanPageType');
 console.log(window.localStorage.getItem('PlanPageType'));
 var nowPlan;
 if(PageFrom === 'new' || PageFrom == null){
+    $('#add-items').click(addItem);
     console.log("From New");
     newObjectGen();
 }
 else{
+    $('#add-items').click(saveItem);
+    $('#add-items').text('儲存方案');
     console.log("From Old");
     var nowArray = JSON.parse(window.localStorage.getItem('cartItem'));
     nowPlan = nowArray[PageFrom];
@@ -86,8 +90,8 @@ function planCost(variable){
 //加入購物車物件，同時寫入新的物件進 localstorage
 function addItem(){
     console.log(nowPlan.id);
-    let smItemTemp = ('<li><a class="sm-dropdown-item dropdown-item" href="#" data-plan-id="'+ nowPlan.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + nowPlan.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
-    let bgItemTemp = ('<li><a class="bg-dropdown-item dropdown-item" href="#" data-plan-id="'+ nowPlan.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + nowPlan.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
+    let smItemTemp = ('<li><a class="sm-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="'+ nowPlan.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + nowPlan.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
+    let bgItemTemp = ('<li><a class="bg-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="'+ nowPlan.id +'"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' + nowPlan.titlename + '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>');
     $('#big-cart-list').prepend(bgItemTemp);
     $('#small-cart-list').prepend(smItemTemp);
     $('.sm-dropdown-item[data-plan-id="'+ nowPlan.id +'"]').click(function(){
@@ -108,6 +112,17 @@ function addItem(){
     $('.cart-total-cost').text(TotalCost);
     // newObjectGen();
 }
+// 儲存方案事件，一樣需更新進 localstorage
+function saveItem(){
+    console.log('save');
+    changeLocal();
+    let TotalCost = 0;
+    let allItemArray = JSON.parse(localStorage.getItem('cartItem'));
+    for(let i=0;i<allItemArray.length;i++){
+        TotalCost = parseInt(TotalCost) + parseInt(allItemArray[i].cost);
+    }
+    $('.cart-total-cost').text(TotalCost);
+}
 
 
 function putLocal(){
@@ -124,4 +139,18 @@ function putLocal(){
     }
     localStorage.setItem('cartItem',JSON.stringify(addNewItem));
     console.log(localStorage.getItem('cartItem'));
+}
+
+function changeLocal(){
+    if(localStorage.getItem('cartItem')!=null){
+        let LocalCartPlan = JSON.parse(localStorage.getItem('cartItem'));
+        for(let i=0;i<LocalCartPlan.length;i++){
+            if(LocalCartPlan[i].id == nowPlan.id){
+                LocalCartPlan[i] = nowPlan;
+                console.log(LocalCartPlan[i]);
+            }
+        }
+        window.localStorage.setItem('cartItem',JSON.stringify(LocalCartPlan));
+    }
+
 }
