@@ -1,7 +1,7 @@
 // 載入此頁時，如果是新的 Plan 則預設勾選不動並建立一個 Object 儲存它，如果是載入特定 Data 則套用 Data 選項
 // 變更選項時，同步更新資料到 Object 內，如果為購物車內資料則同步存入 LocalStorage，如果是新 Object 則是等到最終送出才決定
-// localStorage.clear();
-// StandardPlan.NextId = -1;
+localStorage.clear();
+StandardPlan.NextId = -1;
 
 // 如果是新頁面，要儲存時，建立一個新物件並，獲取現在（html預設）的選項
 const PageFrom = window.localStorage.getItem('PlanPageType');
@@ -28,9 +28,10 @@ planCost(nowPlan);
 function newObjectGen(){
     let instPlan = new StandardPlan({
         titlename : $('#standard-name').text(),
-        timerange : $('input[name="time-range-options"]:checked').val(),
         definition : $('input[name="definition-options"]:checked').val(),
-        cost : ($('input[name="time-range-options"]:checked').val())*($('input[name="definition-options"]:checked').val())
+        lighting : $('input[name="lighting-options"]:checked').val(),
+        timerange : $('input[name="time-range-options"]:checked').val(),
+        cost : (parseInt($('input[name="definition-options"]:checked').val()) + parseInt($('input[name="lighting-options"]:checked').val()))*($('input[name="time-range-options"]:checked').val())
     });    
     console.log("instPlan id ="+ instPlan.id);
     nowPlan = instPlan;
@@ -57,6 +58,10 @@ function oldDataLoad(id){
     // 改畫質選項
     let defCheck = $('input[name="definition-options"][value="'+ loadData.definition +'"]');
     $(defCheck).attr('checked','checked');
+    // 改燈光選項 to do
+    let lightCheck = $('input[name="lighting-options"][value="'+ loadData.lighting +'"]');
+    $(lightCheck).attr('checked','checked');
+
     // 改時間選項
     console.log(loadData.timerange);
     let timeCheck =  $('input[name="time-range-options"][value="'+ loadData.timerange +'"]');
@@ -67,12 +72,16 @@ function oldDataLoad(id){
 
 function reGetItemInfo(){
     console.log("reGetItemInfo");
-    nowPlan.titlename = $('#standard-name').text(),
-    nowPlan.timerange = $('input[name="time-range-options"]:checked').val();
+    nowPlan.titlename = $('#standard-name').text();
     nowPlan.definition = $('input[name="definition-options"]:checked').val();
-    nowPlan.cost = ($('input[name="time-range-options"]:checked').val())*($('input[name="definition-options"]:checked').val());
+    nowPlan.lighting =$('input[name="lighting-options"]:checked').val(),
+    nowPlan.timerange = $('input[name="time-range-options"]:checked').val();
+    nowPlan.cost = (parseInt($('input[name="definition-options"]:checked').val())+parseInt($('input[name="lighting-options"]:checked').val()))*($('input[name="time-range-options"]:checked').val());
 }
 
+
+// 用戶重新選取各按鈕時會重新計算值＆價格
+// To Do：選項的價格文字要隨著變化（顯示相對關係）
 $('input[name="definition-options"]').click(function(){
     reGetItemInfo();
     planCost(nowPlan);
@@ -81,6 +90,11 @@ $('input[name="time-range-options"]').click(function(){
     reGetItemInfo();
     planCost(nowPlan);
 });
+$('input[name="lighting-options"]').click(function(){
+    reGetItemInfo();
+    planCost(nowPlan);
+});
+
 
 
 function planCost(variable){

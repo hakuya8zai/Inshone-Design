@@ -9,6 +9,7 @@ class StandardPlan{
         this.insertUL = data.cartlist;
         this.id = StandardPlan.NextId++;
         localStorage.setItem('NextId',StandardPlan.NextId);
+        this.lighting = data.lighting;
         this.titlename = data.titlename;
         this.timerange = data.timerange;
         this.definition = data.definition;
