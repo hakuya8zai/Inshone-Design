@@ -11,6 +11,7 @@ class StandardPlan {
     localStorage.setItem("NextId", StandardPlan.NextId);
     this.lighting = data.lighting;
     this.sound = data.sound;
+    this.actor = data.actor;
     this.titlename = data.titlename;
     this.timerange = data.timerange;
     this.definition = data.definition;

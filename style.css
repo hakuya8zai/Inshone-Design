@@ -140,3 +140,8 @@ h6{
     color: gray;
     font-size: 0.8rem;
 }
+
+
+.position-sticky{
+    top:30px;
+}
