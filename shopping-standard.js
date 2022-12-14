@@ -145,6 +145,156 @@ let ActorOpt3 = new SectionOption({
 newSectionOpt(ActorOpt3);
 OptionBind(ActorTitle.sectionClass);
 
+// 加入室內 Section
+let IndoorTitle = new SectionDescribe({
+  title: "室內拍攝",
+  moreWord: "如何判斷需要攝影棚？",
+  moreLink: "#",
+  sectionClass: "indoor",
+});
+newSectionDes(IndoorTitle);
+let IndoorOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "indoor",
+  value: "0",
+  check: "checked",
+  labelContent: "無須另租場地",
+  labelCal: "+",
+  labelCost: "0",
+});
+newSectionOpt(IndoorOpt1);
+let IndoorOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "indoor",
+  value: "5000",
+  check: "",
+  labelContent: "小攝影棚、室內空間",
+  labelCal: "+",
+  labelCost: "5000",
+});
+newSectionOpt(IndoorOpt2);
+let IndoorOpt3 = new SectionOption({
+  OptCount: "3",
+  sectionClass: "indoor",
+  value: "30000",
+  check: "",
+  labelContent: "大攝影棚、表演、特殊場地",
+  labelCal: "+",
+  labelCost: "30000",
+});
+newSectionOpt(IndoorOpt3);
+OptionBind(IndoorTitle.sectionClass);
+
+// 加入室外 Section
+let OutdoorTitle = new SectionDescribe({
+  title: "室外拍攝",
+  moreWord: "如何判斷需要外景拍攝？",
+  moreLink: "#",
+  sectionClass: "outdoor",
+});
+newSectionDes(OutdoorTitle);
+let OutdoorOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "outdoor",
+  value: "0",
+  check: "checked",
+  labelContent: "無須室外拍攝",
+  labelCal: "+",
+  labelCost: "0",
+});
+newSectionOpt(OutdoorOpt1);
+let OutdoorOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "outdoor",
+  value: "3000",
+  check: "",
+  labelContent: "都會區",
+  labelCal: "+",
+  labelCost: "3000",
+});
+newSectionOpt(OutdoorOpt2);
+let OutdoorOpt3 = new SectionOption({
+  OptCount: "3",
+  sectionClass: "outdoor",
+  value: "10000",
+  check: "",
+  labelContent: "郊區、戶外",
+  labelCal: "+",
+  labelCost: "10000",
+});
+newSectionOpt(OutdoorOpt3);
+OptionBind(OutdoorTitle.sectionClass);
+
+// 加入後期 Section
+let EditTitle = new SectionDescribe({
+  title: "後期剪接製作",
+  moreWord: "我需要幾版剪接？",
+  moreLink: "#",
+  sectionClass: "edit",
+});
+newSectionDes(EditTitle);
+let EditOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "edit",
+  value: "10000",
+  check: "checked",
+  labelContent: "兩版剪接、基礎音畫調整、上字幕",
+  labelCal: "+",
+  labelCost: "10000",
+});
+newSectionOpt(EditOpt1);
+let EditOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "edit",
+  value: "16000",
+  check: "",
+  labelContent: "三版剪接、音畫精細調整、上字幕",
+  labelCal: "+",
+  labelCost: "16000",
+});
+newSectionOpt(EditOpt2);
+OptionBind(EditTitle.sectionClass);
+
+// 加入特效 Section
+let EffectTitle = new SectionDescribe({
+  title: "特效製作",
+  moreWord: "真的需要特效嗎？",
+  moreLink: "#",
+  sectionClass: "effect",
+});
+newSectionDes(EffectTitle);
+let EffectOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "effect",
+  value: "0",
+  check: "checked",
+  labelContent: "無須特效",
+  labelCal: "+",
+  labelCost: "0",
+});
+newSectionOpt(EffectOpt1);
+let EffectOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "effect",
+  value: "4000",
+  check: "",
+  labelContent: "字卡、轉場、模板設計",
+  labelCal: "+",
+  labelCost: "4000",
+});
+newSectionOpt(EffectOpt2);
+let EffectOpt3 = new SectionOption({
+  OptCount: "3",
+  sectionClass: "effect",
+  value: "10000",
+  check: "",
+  labelContent: "字卡、轉場、模板設計、合成綠幕、粒子特效",
+  labelCal: "+",
+  labelCost: "10000",
+});
+newSectionOpt(EffectOpt3);
+OptionBind(EffectTitle.sectionClass);
+
 // 加入時間 Section
 let TimeTitle = new SectionDescribe({
   title: "影片長度",
@@ -185,6 +335,86 @@ let TimeOpt3 = new SectionOption({
 newSectionOpt(TimeOpt3);
 OptionBind(TimeTitle.sectionClass);
 
+// 加入修改 Section
+let ReviseTitle = new SectionDescribe({
+  title: "定版後修改次數",
+  moreWord: "為何修改次數有限制？",
+  moreLink: "#",
+  sectionClass: "revise",
+});
+newSectionDes(ReviseTitle);
+let ReviseOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "revise",
+  value: "0",
+  check: "checked",
+  labelContent: "免費兩次修改",
+  labelCal: "+",
+  labelCost: "0",
+});
+newSectionOpt(ReviseOpt1);
+let ReviseOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "revise",
+  value: "3000",
+  check: "",
+  labelContent: "升級至三次修改",
+  labelCal: "+",
+  labelCost: "3000",
+});
+newSectionOpt(ReviseOpt2);
+let ReviseOpt3 = new SectionOption({
+  OptCount: "3",
+  sectionClass: "revise",
+  value: "10000",
+  check: "",
+  labelContent: "最高五次修改",
+  labelCal: "+",
+  labelCost: "10000",
+});
+newSectionOpt(ReviseOpt3);
+OptionBind(ReviseTitle.sectionClass);
+
+// 加入專案 Section
+let ManageTitle = new SectionDescribe({
+  title: "專案管理與溝通協調",
+  moreWord: "為何需要管理與溝通人員？",
+  moreLink: "#",
+  sectionClass: "manage",
+});
+newSectionDes(ManageTitle);
+let ManageOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "manage",
+  value: "6000",
+  check: "checked",
+  labelContent: "專員一位",
+  labelCal: "+",
+  labelCost: "6000",
+});
+newSectionOpt(ManageOpt1);
+OptionBind(ManageTitle.sectionClass);
+
+// 加入劇本 Section
+let ScriptTitle = new SectionDescribe({
+  title: "專案管理與溝通協調",
+  moreWord: "為何需要管理與溝通人員？",
+  moreLink: "#",
+  sectionClass: "script",
+});
+newSectionDes(ScriptTitle);
+let ScriptOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "script",
+  value: "8000",
+  check: "checked",
+  labelContent: "執行劇本一份",
+  labelCal: "+",
+  labelCost: "8000",
+});
+newSectionOpt(ScriptOpt1);
+OptionBind(ScriptTitle.sectionClass);
+
 //輸入 Section 物件，會根據 Template 生成元件插入 Html
 function newSectionDes(SectionDes) {
   let SectionDesTemp =
@@ -217,9 +447,9 @@ function newSectionOpt(SectionOpt) {
     SectionOpt.sectionClass +
     "-option" +
     SectionOpt.OptCount +
-    '"><span class="row"><span class="col-6 text-start">' +
+    '"><span class="row"><span class="col-8 text-start">' +
     SectionOpt.labelContent +
-    '</span><span class="col-6 text-end"><span>' +
+    '</span><span class="col-4 text-end"><span>' +
     SectionOpt.labelCal +
     '</span><span id="' +
     SectionOpt.sectionClass +
@@ -259,17 +489,29 @@ function newObjectGen() {
     lighting: $('input[name="lighting-options"]:checked').val(),
     sound: $('input[name="sound-options"]:checked').val(),
     actor: $('input[name="actor-options"]:checked').val(),
+    indoor: $('input[name="indoor-options"]:checked').val(),
+    outdoor: $('input[name="outdoor-options"]:checked').val(),
+    edit: $('input[name="edit-options"]:checked').val(),
+    effect: $('input[name="effect-options"]:checked').val(),
+    revise: $('input[name="revise-options"]:checked').val(),
+    manage: $('input[name="manage-options"]:checked').val(),
+    script: $('input[name="script-options"]:checked').val(),
     timerange: $('input[name="time-range-options"]:checked').val(),
     cost:
       (parseInt($('input[name="definition-options"]:checked').val()) +
         parseInt($('input[name="sound-options"]:checked').val()) +
         parseInt($('input[name="actor-options"]:checked').val()) +
+        parseInt($('input[name="indoor-options"]:checked').val()) +
+        parseInt($('input[name="outdoor-options"]:checked').val()) +
+        parseInt($('input[name="edit-options"]:checked').val()) +
+        parseInt($('input[name="effect-options"]:checked').val()) +
         parseInt($('input[name="lighting-options"]:checked').val())) *
-      $('input[name="time-range-options"]:checked').val(),
+        parseInt($('input[name="time-range-options"]:checked').val()) +
+      parseInt($('input[name="revise-options"]:checked').val()) +
+      parseInt($('input[name="manage-options"]:checked').val()) +
+      parseInt($('input[name="script-options"]:checked').val()),
   });
-  console.log("instPlan id =" + instPlan.id);
   nowPlan = instPlan;
-  console.log(nowPlan.id);
 }
 
 // 來自購物車，不需要新建物件，只需載入舊的 value 值
@@ -309,12 +551,38 @@ function oldDataLoad(id) {
     'input[name="actor-options"][value="' + loadData.actor + '"]'
   );
   $(actorCheck).attr("checked", "checked");
+  // 改室內選項
+  let indoorCheck = $(
+    'input[name="indoor-options"][value="' + loadData.indoor + '"]'
+  );
+  $(indoorCheck).attr("checked", "checked");
+  // 改室外選項
+  let outdoorCheck = $(
+    'input[name="outdoor-options"][value="' + loadData.outdoor + '"]'
+  );
+  $(outdoorCheck).attr("checked", "checked");
+  // 改後製選項
+  let editCheck = $(
+    'input[name="edit-options"][value="' + loadData.edit + '"]'
+  );
+  $(editCheck).attr("checked", "checked");
+  // 改特效選項
+  let effectCheck = $(
+    'input[name="effect-options"][value="' + loadData.effect + '"]'
+  );
+  $(effectCheck).attr("checked", "checked");
   // 改時間選項
-  console.log(loadData.timerange);
   let timeCheck = $(
     'input[name="time-range-options"][value="' + loadData.timerange + '"]'
   );
   $(timeCheck).attr("checked", "checked");
+  // 改修改選項
+  let reviseCheck = $(
+    'input[name="revise-options"][value="' + loadData.revise + '"]'
+  );
+  $(reviseCheck).attr("checked", "checked");
+
+  // 管理和劇本只有單選，故先不需改
   // 改價格
   nowPlan = loadData;
 }
@@ -326,13 +594,27 @@ function reGetItemInfo() {
   nowPlan.lighting = $('input[name="lighting-options"]:checked').val();
   nowPlan.actor = $('input[name="actor-options"]:checked').val();
   nowPlan.sound = $('input[name="sound-options"]:checked').val();
+  nowPlan.indoor = $('input[name="indoor-options"]:checked').val();
+  nowPlan.outdoor = $('input[name="outdoor-options"]:checked').val();
+  nowPlan.edit = $('input[name="edit-options"]:checked').val();
+  nowPlan.effect = $('input[name="effect-options"]:checked').val();
   nowPlan.timerange = $('input[name="time-range-options"]:checked').val();
+  nowPlan.revise = $('input[name="revise-options"]:checked').val();
+  nowPlan.manage = $('input[name="manage-options"]:checked').val();
+  nowPlan.script = $('input[name="script-options"]:checked').val();
   nowPlan.cost =
     (parseInt($('input[name="definition-options"]:checked').val()) +
       parseInt($('input[name="sound-options"]:checked').val()) +
       parseInt($('input[name="actor-options"]:checked').val()) +
+      parseInt($('input[name="indoor-options"]:checked').val()) +
+      parseInt($('input[name="outdoor-options"]:checked').val()) +
+      parseInt($('input[name="edit-options"]:checked').val()) +
+      parseInt($('input[name="effect-options"]:checked').val()) +
       parseInt($('input[name="lighting-options"]:checked').val())) *
-    $('input[name="time-range-options"]:checked').val();
+      parseInt($('input[name="time-range-options"]:checked').val()) +
+    parseInt($('input[name="revise-options"]:checked').val()) +
+    parseInt($('input[name="manage-options"]:checked').val()) +
+    parseInt($('input[name="script-options"]:checked').val());
 }
 
 // 用戶重新選取各按鈕時會重新計算值＆價格
@@ -344,14 +626,6 @@ function OptionBind(opt) {
   });
 }
 $('input[name="definition-options"]').click(function () {
-  reGetItemInfo();
-  planCost(nowPlan);
-});
-$('input[name="sound-options"]').click(function () {
-  reGetItemInfo();
-  planCost(nowPlan);
-});
-$('input[name="lighting-options"]').click(function () {
   reGetItemInfo();
   planCost(nowPlan);
 });

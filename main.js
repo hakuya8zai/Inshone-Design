@@ -12,6 +12,13 @@ class StandardPlan {
     this.lighting = data.lighting;
     this.sound = data.sound;
     this.actor = data.actor;
+    this.indoor = data.indoor;
+    this.outdoor = data.outdoor;
+    this.edit = data.edit;
+    this.effect = data.effect;
+    this.revise = data.revise;
+    this.manage = data.manage;
+    this.script = data.script;
     this.titlename = data.titlename;
     this.timerange = data.timerange;
     this.definition = data.definition;
