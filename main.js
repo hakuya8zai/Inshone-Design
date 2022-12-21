@@ -3,6 +3,8 @@ $("#header").load("header.html", function () {
 });
 $("#footer").load("footer.html");
 
+console.log("main.js");
+
 class StandardPlan {
   static NextId = localStorage.getItem("NextId") || 0;
   constructor(data) {
