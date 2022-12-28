@@ -21,17 +21,37 @@
     <div id="header">header</div>
     <main class="bg-light">
       <content class="container-fluid">
-        <section class="row justify-content-center border-bottom">
-          <div class="left-pic col-2">
-            <img src="./Image/standard-smImage.jpeg" alt="" />
+        <section class="Bag-title row justify-content-center mb-5">
+          <div class="col-8">
+            <h2 class="justify-self-center">以下是你的購物車內容</h2>
           </div>
-          <div class="center-content col-4">
-            <div class="item-title">標題</div>
+        </section>
+        <section class="row justify-content-center items">
+          <div class="left-pic col-8 col-lg-2">
+            <img src="./Image/standard-smImage.jpeg" class="img-fluid" alt="" />
+          </div>
+          <div class="center-content col-8 col-lg-4">
+            <div class="item-title">
+              <h4>形象影片標準方案</h3>
+            </div>
+            <div class="item-intro">
+              一些簡單的介紹資訊
+            </div>
             <div class="item-spec">
-              點擊展開詳細資料，好像可以改用 list -> dropdown 做
+              <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                點擊展開詳細規格
+              </button>
+              <div class="collapse" id="collapseExample">
+                <div class="mt-3">
+                  詳細資料一詳細資料二
+                </div>
+              </div>
             </div>
           </div>
-          <div class="right-cost col-2">10000元</div>
+          <div class="right-cal col-8 col-lg-2 d-flex align-items-end justify-content-end">
+            <div class="item-cost">合計NT10000</div>
+          </div>
+          <div class="col-8 border-bottom mt-5 border-2"></div>
         </section>
       </content>
     </main>

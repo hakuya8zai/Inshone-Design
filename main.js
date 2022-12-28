@@ -7,24 +7,36 @@ console.log("main.js");
 
 class StandardPlan {
   static NextId = localStorage.getItem("NextId") || 0;
-  constructor(data) {
-    this.insertUL = data.cartlist;
+  constructor() {
+    this.insertUL;
     this.id = StandardPlan.NextId++;
     localStorage.setItem("NextId", StandardPlan.NextId);
-    this.lighting = data.lighting;
-    this.sound = data.sound;
-    this.actor = data.actor;
-    this.indoor = data.indoor;
-    this.outdoor = data.outdoor;
-    this.edit = data.edit;
-    this.effect = data.effect;
-    this.revise = data.revise;
-    this.manage = data.manage;
-    this.script = data.script;
-    this.titlename = data.titlename;
-    this.timerange = data.timerange;
-    this.definition = data.definition;
-    this.cost = data.cost;
+    this.lighting;
+    this.lightingName;
+    this.sound;
+    this.soundName;
+    this.actor;
+    this.actorName;
+    this.indoor;
+    this.indoorName;
+    this.outdoor;
+    this.outdoorname;
+    this.edit;
+    this.editName;
+    this.effect;
+    this.effectName;
+    this.revise;
+    this.ReviseName;
+    this.manage;
+    this.manageName;
+    this.script;
+    this.scriptName;
+    this.titlename;
+    this.timerange;
+    this.timerangeName;
+    this.definition;
+    this.definitionName;
+    this.cost;
   }
 }
 

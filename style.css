@@ -46,16 +46,20 @@ img {
 /* 聯絡我們 按鈕樣式 */
 .contact-Us{
     text-align: center;
-    background-color: white;
+    background-color: #FEAA34;
     padding: 0;
 }
-.contact-Us>a{
+.hc-font{
     line-height: 60px;
+    color: #343a40;
+
 }
 .contact-Us:hover{
     cursor: pointer;
-    background-color: #FEAA34;
-    text-decoration:underline;
+    background-color: #343a40;
+}
+.hc-font:hover{
+    color: white;
 }
 
 

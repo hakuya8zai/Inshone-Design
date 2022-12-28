@@ -25,6 +25,46 @@ class SectionOption {
     this.labelCost = SectionOpt.labelCost; //5000
   }
 }
+// 加入畫質 Section
+let DefinitionTitle = new SectionDescribe({
+  title: "需要的影片畫質",
+  moreWord: "如何知道我需要的畫質？",
+  moreLink: "#",
+  sectionClass: "definition",
+});
+newSectionDes(DefinitionTitle);
+let DefinitionOpt1 = new SectionOption({
+  OptCount: "1",
+  sectionClass: "definition",
+  value: "15000",
+  check: "checked",
+  labelContent: "標準畫質 1080P HD",
+  labelCal: "+",
+  labelCost: "15000",
+});
+newSectionOpt(DefinitionOpt1);
+let DefinitionOpt2 = new SectionOption({
+  OptCount: "2",
+  sectionClass: "definition",
+  value: "25000",
+  check: "",
+  labelContent: "超高畫質 1440P 2K",
+  labelCal: "+",
+  labelCost: "20000",
+});
+newSectionOpt(DefinitionOpt2);
+let DefinitionOpt3 = new SectionOption({
+  OptCount: "3",
+  sectionClass: "definition",
+  value: "40000",
+  check: "",
+  labelContent: "極限畫質 2160P 4K",
+  labelCal: "+",
+  labelCost: "40000",
+});
+newSectionOpt(DefinitionOpt3);
+OptionBind(DefinitionTitle.sectionClass);
+
 // 加入燈光 Section
 let LightingTitle = new SectionDescribe({
   title: "燈光與攝影設計",
@@ -38,7 +78,7 @@ let LightingOpt1 = new SectionOption({
   sectionClass: "lighting",
   value: "10000",
   check: "checked",
-  labelContent: "清晰可見",
+  labelContent: "光線明亮、清晰可見",
   labelCal: "+",
   labelCost: "10000",
 });
@@ -48,7 +88,7 @@ let LightingOpt2 = new SectionOption({
   sectionClass: "lighting",
   value: "20000",
   check: "",
-  labelContent: "精緻情境",
+  labelContent: "光影設計，精緻情境",
   labelCal: "+",
   labelCost: "20000",
 });
@@ -58,7 +98,7 @@ let LightingOpt3 = new SectionOption({
   sectionClass: "lighting",
   value: "40000",
   check: "",
-  labelContent: "電影質感",
+  labelContent: "注重對比，電影質感",
   labelCal: "+",
   labelCost: "40000",
 });
@@ -465,7 +505,7 @@ function newSectionOpt(SectionOpt) {
 // 如果是新頁面，要儲存時，建立一個新物件並，獲取現在（html預設）的選項
 const PageFrom = window.localStorage.getItem("PlanPageType");
 console.log(window.localStorage.getItem("PlanPageType"));
-var nowPlan;
+var nowPlan = new StandardPlan();
 if (PageFrom === "new" || PageFrom == null) {
   $("#add-items").click(addItem);
   console.log("From New");
@@ -483,35 +523,7 @@ console.log(nowPlan);
 planCost(nowPlan);
 // 來自新增，需要新建物件
 function newObjectGen() {
-  let instPlan = new StandardPlan({
-    titlename: $("#standard-name").text(),
-    definition: $('input[name="definition-options"]:checked').val(),
-    lighting: $('input[name="lighting-options"]:checked').val(),
-    sound: $('input[name="sound-options"]:checked').val(),
-    actor: $('input[name="actor-options"]:checked').val(),
-    indoor: $('input[name="indoor-options"]:checked').val(),
-    outdoor: $('input[name="outdoor-options"]:checked').val(),
-    edit: $('input[name="edit-options"]:checked').val(),
-    effect: $('input[name="effect-options"]:checked').val(),
-    revise: $('input[name="revise-options"]:checked').val(),
-    manage: $('input[name="manage-options"]:checked').val(),
-    script: $('input[name="script-options"]:checked').val(),
-    timerange: $('input[name="time-range-options"]:checked').val(),
-    cost:
-      (parseInt($('input[name="definition-options"]:checked').val()) +
-        parseInt($('input[name="sound-options"]:checked').val()) +
-        parseInt($('input[name="actor-options"]:checked').val()) +
-        parseInt($('input[name="indoor-options"]:checked').val()) +
-        parseInt($('input[name="outdoor-options"]:checked').val()) +
-        parseInt($('input[name="edit-options"]:checked').val()) +
-        parseInt($('input[name="effect-options"]:checked').val()) +
-        parseInt($('input[name="lighting-options"]:checked').val())) *
-        parseInt($('input[name="time-range-options"]:checked').val()) +
-      parseInt($('input[name="revise-options"]:checked').val()) +
-      parseInt($('input[name="manage-options"]:checked').val()) +
-      parseInt($('input[name="script-options"]:checked').val()),
-  });
-  nowPlan = instPlan;
+  reGetItemInfo(nowPlan);
 }
 
 // 來自購物車，不需要新建物件，只需載入舊的 value 值
@@ -587,22 +599,22 @@ function oldDataLoad(id) {
   nowPlan = loadData;
 }
 
-function reGetItemInfo() {
+function reGetItemInfo(regetPlan) {
   console.log("reGetItemInfo");
-  nowPlan.titlename = $("#standard-name").text();
-  nowPlan.definition = $('input[name="definition-options"]:checked').val();
-  nowPlan.lighting = $('input[name="lighting-options"]:checked').val();
-  nowPlan.actor = $('input[name="actor-options"]:checked').val();
-  nowPlan.sound = $('input[name="sound-options"]:checked').val();
-  nowPlan.indoor = $('input[name="indoor-options"]:checked').val();
-  nowPlan.outdoor = $('input[name="outdoor-options"]:checked').val();
-  nowPlan.edit = $('input[name="edit-options"]:checked').val();
-  nowPlan.effect = $('input[name="effect-options"]:checked').val();
-  nowPlan.timerange = $('input[name="time-range-options"]:checked').val();
-  nowPlan.revise = $('input[name="revise-options"]:checked').val();
-  nowPlan.manage = $('input[name="manage-options"]:checked').val();
-  nowPlan.script = $('input[name="script-options"]:checked').val();
-  nowPlan.cost =
+  regetPlan.titlename = $("#standard-name").text();
+  regetPlan.definition = $('input[name="definition-options"]:checked').val();
+  regetPlan.lighting = $('input[name="lighting-options"]:checked').val();
+  regetPlan.actor = $('input[name="actor-options"]:checked').val();
+  regetPlan.sound = $('input[name="sound-options"]:checked').val();
+  regetPlan.indoor = $('input[name="indoor-options"]:checked').val();
+  regetPlan.outdoor = $('input[name="outdoor-options"]:checked').val();
+  regetPlan.edit = $('input[name="edit-options"]:checked').val();
+  regetPlan.effect = $('input[name="effect-options"]:checked').val();
+  regetPlan.timerange = $('input[name="time-range-options"]:checked').val();
+  regetPlan.revise = $('input[name="revise-options"]:checked').val();
+  regetPlan.manage = $('input[name="manage-options"]:checked').val();
+  regetPlan.script = $('input[name="script-options"]:checked').val();
+  regetPlan.cost =
     (parseInt($('input[name="definition-options"]:checked').val()) +
       parseInt($('input[name="sound-options"]:checked').val()) +
       parseInt($('input[name="actor-options"]:checked').val()) +
@@ -615,20 +627,17 @@ function reGetItemInfo() {
     parseInt($('input[name="revise-options"]:checked').val()) +
     parseInt($('input[name="manage-options"]:checked').val()) +
     parseInt($('input[name="script-options"]:checked').val());
+  getName(regetPlan);
 }
 
 // 用戶重新選取各按鈕時會重新計算值＆價格
 // To Do：選項的價格文字要隨著變化（顯示相對關係）
 function OptionBind(opt) {
   $('input[name="' + opt + '-options"]').click(function () {
-    reGetItemInfo();
+    reGetItemInfo(nowPlan);
     planCost(nowPlan);
   });
 }
-$('input[name="definition-options"]').click(function () {
-  reGetItemInfo();
-  planCost(nowPlan);
-});
 
 function planCost(variable) {
   console.log(variable);
@@ -668,8 +677,38 @@ function addItem() {
     TotalCost = parseInt(TotalCost) + parseInt(allItemArray[i].cost);
   }
   $(".cart-total-cost").text(TotalCost);
-  // newObjectGen();
 }
+
+// 在要儲存進 localstorage 的時候再存選項的名稱進物件內
+function getName(PlanName) {
+  let defId = $('input[name="definition-options"]:checked').attr("id");
+  PlanName.definitionName = eval(
+    "DefinitionOpt" + defId.slice(-1)
+  ).labelContent;
+  let lightId = $('input[name="lighting-options"]:checked').attr("id");
+  PlanName.lightingName = eval("LightingOpt" + lightId.slice(-1)).labelContent;
+  let soundId = $('input[name="sound-options"]:checked').attr("id");
+  PlanName.soundName = eval("SoundOpt" + soundId.slice(-1)).labelContent;
+  let actorId = $('input[name="actor-options"]:checked').attr("id");
+  PlanName.actorName = eval("ActorOpt" + actorId.slice(-1)).labelContent;
+  let indoorId = $('input[name="indoor-options"]:checked').attr("id");
+  PlanName.indoorName = eval("IndoorOpt" + indoorId.slice(-1)).labelContent;
+  let outdoorId = $('input[name="outdoor-options"]:checked').attr("id");
+  PlanName.outdoorName = eval("OutdoorOpt" + outdoorId.slice(-1)).labelContent;
+  let editId = $('input[name="edit-options"]:checked').attr("id");
+  PlanName.editName = eval("EditOpt" + editId.slice(-1)).labelContent;
+  let effectId = $('input[name="effect-options"]:checked').attr("id");
+  PlanName.effectName = eval("EffectOpt" + effectId.slice(-1)).labelContent;
+  let reviseId = $('input[name="revise-options"]:checked').attr("id");
+  PlanName.reviseName = eval("ReviseOpt" + reviseId.slice(-1)).labelContent;
+  let manageId = $('input[name="manage-options"]:checked').attr("id");
+  PlanName.manageName = eval("ManageOpt" + manageId.slice(-1)).labelContent;
+  let scriptId = $('input[name="script-options"]:checked').attr("id");
+  PlanName.scriptName = eval("ScriptOpt" + scriptId.slice(-1)).labelContent;
+  let timerangeId = $('input[name="time-range-options"]:checked').attr("id");
+  PlanName.timerangeName = eval("TimeOpt" + timerangeId.slice(-1)).labelContent;
+}
+
 // 儲存方案事件，一樣需更新進 localstorage
 function saveItem() {
   console.log("save");
@@ -709,3 +748,10 @@ function changeLocal() {
     window.localStorage.setItem("cartItem", JSON.stringify(LocalCartPlan));
   }
 }
+
+var a = 0;
+if (a == 0) {
+  let a = 1;
+  console.log("a2=" + a);
+}
+console.log("a3=" + a);
