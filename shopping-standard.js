@@ -748,10 +748,3 @@ function changeLocal() {
     window.localStorage.setItem("cartItem", JSON.stringify(LocalCartPlan));
   }
 }
-
-var a = 0;
-if (a == 0) {
-  let a = 1;
-  console.log("a2=" + a);
-}
-console.log("a3=" + a);

@@ -21,37 +21,87 @@
     <div id="header">header</div>
     <main class="bg-light">
       <content class="container-fluid">
-        <section class="Bag-title row justify-content-center mb-5">
-          <div class="col-8">
-            <h2 class="justify-self-center">以下是你的購物車內容</h2>
+        <section class="Bag-title row justify-content-center">
+          <div class="col-8 p-0 d-flex justify-content-center row">
+            <h2 class="col-12 p-0 d-flex justify-content-center">
+              以下是購物袋內的商品
+            </h2>
+            <h2 class="col-12 p-0 d-flex justify-content-center bag-total-cost">
+              NT 100000
+            </h2>
           </div>
         </section>
-        <section class="row justify-content-center items">
-          <div class="left-pic col-8 col-lg-2">
-            <img src="./Image/standard-smImage.jpeg" class="img-fluid" alt="" />
+        <!-- 這是一格方案的範例模板 -->
+        <!-- <section class="row justify-content-center items mb-5" id="BagSection0">
+          <div
+            class="left-pic col-6 col-lg-2 mb-3 d-flex justify-content-lg-start justify-content-center align-self-start"
+          >
+            <img src="./Image/standard-lgImage.jpg" class="img-fluid" alt="" />
           </div>
-          <div class="center-content col-8 col-lg-4">
-            <div class="item-title">
-              <h4>形象影片標準方案</h3>
+          <div class="col-10 col-lg-6 ps-4">
+            <div class="item-title mt-3 mt-lg-0">
+              <h4>
+                <a
+                  class="link-dark text-decoration-none"
+                  id="BagToEdit0"
+                  href="./shopping-standard.html"
+                  >形象影片標準方案</a
+                >
+              </h4>
             </div>
-            <div class="item-intro">
-              一些簡單的介紹資訊
-            </div>
-            <div class="item-spec">
-              <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                點擊展開詳細規格
-              </button>
-              <div class="collapse" id="collapseExample">
+            <div
+              class="item-spec pt-md-3 mt-lg-3 mt-xl-4 mt-xxl-5 row d-flex align-self-end"
+            >
+              <div class="col-8">
+                <button
+                  class="btn btn-link p-0 d-flex"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseBagItem0"
+                  aria-expanded="false"
+                  aria-controls="collapseBagItem0"
+                >
+                  點擊展開詳細規格
+                </button>
+              </div>
+              <div class="right-cal col-4 d-flex justify-content-end">
+                <div class="item-cost h5 mb-0">NT10000</div>
+              </div>
+              <div class="collapse" id="collapseBagItem0">
                 <div class="mt-3">
-                  詳細資料一詳細資料二
+                  <ul class="px-3">
+                    <li>標準畫質 1080P HD</li>
+                    <li>光線明亮，清晰可見</li>
+                    <li>專業音效庫素材</li>
+                    <li>無須另聘演員</li>
+                    <li>無須另租場地</li>
+                    <li>無須室外拍攝</li>
+                    <li>兩版剪接，基礎音畫調整，上字幕</li>
+                    <li>無須特效</li>
+                    <li>一分鐘以內</li>
+                    <li>免費兩次修改</li>
+                    <li>專員一位</li>
+                    <li>執行劇本一份</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div class="right-cal col-8 col-lg-2 d-flex align-items-end justify-content-end">
-            <div class="item-cost">合計NT10000</div>
+          <div class="col-10 col-lg-8 d-flex justify-content-end">
+            <div>
+              <a class="text-decoration-none" id="BagRemove0" href="#">移除</a>
+            </div>
           </div>
-          <div class="col-8 border-bottom mt-5 border-2"></div>
+          <div class="col-10 col-lg-8 d-flex justify-content-end"></div>
+
+          <div class="col-10 col-lg-8 border-bottom mt-4 border-2"></div>
+        </section> -->
+        <section class="row justify-content-center" id="checkout-btn">
+          <div class="col-10 col-md-6 col-lg-4 d-grid">
+            <a type="btn" class="btn btn-primary btn-large" href="#"
+              >確認方案</a
+            >
+          </div>
         </section>
       </content>
     </main>

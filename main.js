@@ -44,25 +44,36 @@ class StandardPlan {
 function loadAllCartItem() {
   const LocalCartObject = JSON.parse(window.localStorage.getItem("cartItem"));
   console.log(LocalCartObject);
-
+  //先把購物車清空
+  let oldItem = document.querySelectorAll(".BagList");
+  if (oldItem != null) {
+    for (let i = 0; i < oldItem.length; i++) {
+      console.log(oldItem[i]);
+      oldItem[i].remove();
+    }
+  }
+  //如果 LocalStorage 有東西，把東西丟進去
   if (LocalCartObject != null) {
     console.log("LocalCart!=null");
     for (let i = 0; i < LocalCartObject.length; i++) {
       let loadingItem = LocalCartObject[i];
-      console.log("loadingItem=" + loadingItem.id);
 
       let smItemTemp =
-        '<li><a class="sm-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="' +
+        '<li class="BagList"><a class="sm-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="' +
         loadingItem.id +
         '"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' +
         loadingItem.titlename +
-        '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>';
+        '</div><div class="cartItem-subtitle">' +
+        loadingItem.cost +
+        "</div></div></div></a></li>";
       let bgItemTemp =
-        '<li><a class="bg-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="' +
+        '<li class="BagList"><a class="bg-dropdown-item dropdown-item" href="./shopping-standard.html" data-plan-id="' +
         loadingItem.id +
         '"><div class="row"><div class="col-4"><img src="./Image/standard-smImage.jpeg" alt="" /></div><div class="col-8 m-auto"><div class="cartItem-title">' +
         loadingItem.titlename +
-        '</div><div class="cartItem-subtitle">形象影片</div></div></div></a></li>';
+        '</div><div class="cartItem-subtitle">' +
+        loadingItem.cost +
+        "</div></div></div></a></li>";
       $("#big-cart-list").prepend(bgItemTemp);
       $("#small-cart-list").prepend(smItemTemp);
       $('.sm-dropdown-item[data-plan-id="' + loadingItem.id + '"]').click(
