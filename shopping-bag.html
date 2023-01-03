@@ -98,23 +98,92 @@
         </section> -->
         <!-- --- 分隔線，這邊要放聯絡我們區塊 --- -->
         <section class="ContactBlock row d-flex justify-content-center">
-          <div class="col-8">
+          <div class="col-10 col-lg-8">
             <div>
               <h4>聯絡我們</h4>
             </div>
             <div class="row">
-              <div class="col-6">
-                <form
-                  class="form-floating form-control-lg shadow-none border-0"
-                >
+              <div class="col-12 col-lg-6 contact-company mt-4">
+                <form class="form-floating shadow-none border-0">
                   <input
                     type="text"
-                    class="form-control-lg shadow-none border-0"
+                    class="form-control shadow-none border-0"
                     id="CompanyInputFloat"
                     placeholder="公司/單位名稱"
                     value=""
                   />
                   <label for="CompanyInputFloat">公司/單位名稱</label>
+                </form>
+              </div>
+              <div class="col-12 col-lg-6 contact-name mt-4">
+                <form class="form-floating shadow-none border-0">
+                  <input
+                    type="text"
+                    class="form-control shadow-none border-0"
+                    id="CompanyInputFloat"
+                    placeholder="姓名"
+                    value=""
+                  />
+                  <label for="CompanyInputFloat">姓名</label>
+                </form>
+              </div>
+              <div class="col-12 col-lg-6 contact-email mt-4">
+                <form class="form-floating shadow-none border-0">
+                  <input
+                    type="text"
+                    class="form-control shadow-none border-0"
+                    id="CompanyInputFloat"
+                    placeholder="Email"
+                    value=""
+                  />
+                  <label for="CompanyInputFloat">Email</label>
+                </form>
+              </div>
+              <div class="col-12 col-lg-6 contact-phone mt-4">
+                <form class="form-floating shadow-none border-0">
+                  <input
+                    type="text"
+                    class="form-control shadow-none border-0"
+                    id="CompanyInputFloat"
+                    placeholder="聯絡電話"
+                    value=""
+                  />
+                  <label for="CompanyInputFloat">聯絡電話</label>
+                </form>
+              </div>
+
+              <div class="col-12 col-lg-6 date-start mt-4">
+                <form class="form-floating shadow-none border-0">
+                  <input
+                    type="text"
+                    onfocus="(this.type='date')"
+                    onmouseover="(this.type='date')"
+                    onblur="(this.type='text')"
+                    class="form-control shadow-none border-0"
+                    id="startDate"
+                    placeholder="預計開案日期"
+                    value=""
+                    min=""
+                    max=""
+                  />
+                  <label for="startDate">預計開案日期</label>
+                </form>
+              </div>
+              <div class="col-12 col-lg-6 date-end mt-4">
+                <form class="form-floating shadow-none border-0">
+                  <input
+                    type="text"
+                    onfocus="(this.type='date')"
+                    onmouseover="(this.type='date')"
+                    onblur="(this.type='text')"
+                    class="form-control shadow-none border-0"
+                    id="endDate"
+                    placeholder="預計完成日期"
+                    value=""
+                    min=""
+                    max=""
+                  />
+                  <label for="endDate">預計完成日期</label>
                 </form>
               </div>
             </div>
