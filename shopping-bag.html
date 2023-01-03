@@ -130,7 +130,7 @@
               <div class="col-12 col-lg-6 contact-email mt-4">
                 <form class="form-floating shadow-none border-0">
                   <input
-                    type="text"
+                    type="email"
                     class="form-control shadow-none border-0"
                     id="CompanyInputFloat"
                     placeholder="Email"
@@ -142,7 +142,7 @@
               <div class="col-12 col-lg-6 contact-phone mt-4">
                 <form class="form-floating shadow-none border-0">
                   <input
-                    type="text"
+                    type="tel"
                     class="form-control shadow-none border-0"
                     id="CompanyInputFloat"
                     placeholder="聯絡電話"
@@ -151,7 +151,20 @@
                   <label for="CompanyInputFloat">聯絡電話</label>
                 </form>
               </div>
-
+              <div class="col-12 contact-waySelect mt-4">
+                <div class="form-floating">
+                  <select
+                    class="form-select shadow-none border-0"
+                    id="contactWay"
+                    aria-label=".form-select"
+                  >
+                    <option value="0" selected>不限</option>
+                    <option value="1">偏好電話溝通</option>
+                    <option value="2">偏好 Email</option>
+                  </select>
+                  <label for="contactWay">偏好聯絡方式</label>
+                </div>
+              </div>
               <div class="col-12 col-lg-6 date-start mt-4">
                 <form class="form-floating shadow-none border-0">
                   <input
@@ -185,6 +198,17 @@
                   />
                   <label for="endDate">預計完成日期</label>
                 </form>
+              </div>
+              <div class="col-12 commentPlace mt-4">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="影片的目標、受眾、播放平台...等相關資訊都歡迎提供！"
+                    id="floatingTextarea"
+                    style="height: 100px"
+                  ></textarea>
+                  <label for="floatingTextarea">備註</label>
+                </div>
               </div>
             </div>
           </div>

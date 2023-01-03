@@ -163,3 +163,12 @@ h6{
     top: 0;
     width: auto;
 }
+
+
+/* 備註樣式修改 */
+#floatingTextarea::placeholder{
+    color: revert;
+}
+#floatingTextarea:not(:focus)::placeholder{
+    color: transparent;
+}
