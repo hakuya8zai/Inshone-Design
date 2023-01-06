@@ -1,0 +1,134 @@
+<section class="ContactBlock row d-flex justify-content-center">
+  <div class="col-10 col-lg-8">
+    <div>
+      <h4>聯絡我們</h4>
+    </div>
+    <div>
+      <form class="shadow-none border-0 row needs-validation" novalidate>
+        <div class="col-12 col-lg-6 contact-company mt-4">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none border-0"
+              id="CompanyInputFloat"
+              placeholder="公司/單位名稱"
+              value=""
+            />
+            <label for="CompanyInputFloat">公司/單位名稱</label>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 contact-name mt-4">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control shadow-none border-0"
+              id="AcoountInputFloat"
+              placeholder="姓名"
+              value=""
+              required
+            />
+            <label for="AccountInputFloat">姓名</label>
+            <div class="invalid-feedback">請輸入您的大名</div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 contact-email mt-4">
+          <div class="form-floating">
+            <input
+              type="email"
+              class="form-control shadow-none border-0"
+              id="EmailInputFloat"
+              placeholder="Email"
+              value=""
+              required
+            />
+            <label for="EmailInputFloat">Email</label>
+            <div class="invalid-feedback">請輸入 Email</div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 contact-phone mt-4">
+          <div class="form-floating">
+            <input
+              type="tel"
+              class="form-control shadow-none border-0"
+              id="PhoneInputFloat"
+              placeholder="聯絡電話"
+              value=""
+            />
+            <label for="PhoneInputFloat">聯絡電話</label>
+          </div>
+        </div>
+        <div class="col-12 contact-waySelect mt-4">
+          <div class="form-floating">
+            <select
+              class="form-select shadow-none border-0"
+              id="contactWay"
+              aria-label=".form-select"
+            >
+              <option value="0" selected>不限</option>
+              <option value="1">偏好電話溝通</option>
+              <option value="2">偏好 Email</option>
+            </select>
+            <label for="contactWay">偏好聯絡方式</label>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 date-start mt-4">
+          <div class="form-floating">
+            <input
+              type="text"
+              onfocus="(this.type='date')"
+              onmouseover="(this.type='date')"
+              onblur="(this.type='text')"
+              class="form-control shadow-none border-0"
+              id="startDate"
+              placeholder="預計開案日期"
+              value=""
+              min=""
+              max=""
+              required
+            />
+            <label for="startDate">預計開案日期</label>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 date-end mt-4">
+          <div class="form-floating">
+            <input
+              type="text"
+              onfocus="(this.type='date')"
+              onmouseover="(this.type='date')"
+              onblur="(this.type='text')"
+              class="form-control shadow-none border-0"
+              id="endDate"
+              placeholder="預計完成日期"
+              value=""
+              min=""
+              max=""
+            />
+            <label for="endDate">預計完成日期</label>
+          </div>
+        </div>
+        <div class="col-12 commentPlace mt-4">
+          <div class="form-floating">
+            <textarea
+              class="form-control shadow-none border-0"
+              placeholder="影片的目標、受眾、播放平台...等相關資訊都歡迎提供！"
+              id="floatingTextarea"
+              style="height: 100px"
+            ></textarea>
+            <label for="floatingTextarea">備註</label>
+          </div>
+        </div>
+        <div
+          class="col-12 col-lg-6 d-grid mt-5"
+        >
+          <a type="btn" class="btn btn-primary btn-large" href="./index.html"
+            >加入其他方案</a
+          >
+        </div>
+        <div class="col-12 col-lg-6 d-grid mt-2 mt-lg-5"">
+          <button class="btn btn-outline-primary btn-large" type="submit">確認提交</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<script src="./contact.js"></script>

@@ -73,6 +73,15 @@ function BindButton(count) {
   $("#BagToEdit" + count).click(function () {
     window.localStorage.setItem("PlanPageType", LocalCartObject[count].id);
   });
+  //確認方案後，綁定最後的按鈕要填聯絡資料＆提交
+  $("#GoContact").click(function () {
+    let ContactSectionTemp = '<div id="ContactSection"></div>';
+    $("#checkout-btn").before(ContactSectionTemp);
+    $("#ContactSection").load("./contactSection.html");
+    $("#checkout-btn").remove();
+    // To DO 提交後可以檢查是否已填
+    // $("#GoContact").attr("id", "submit");
+  });
 }
 
 function DeleteLocalItem(count) {
