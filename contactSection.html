@@ -22,7 +22,7 @@
             <input
               type="text"
               class="form-control shadow-none border-0"
-              id="AcoountInputFloat"
+              id="AccountInputFloat"
               placeholder="姓名"
               value=""
               required
@@ -111,10 +111,10 @@
             <textarea
               class="form-control shadow-none border-0"
               placeholder="影片的目標、受眾、播放平台...等相關資訊都歡迎提供！"
-              id="floatingTextarea"
+              id="commentArea"
               style="height: 100px"
             ></textarea>
-            <label for="floatingTextarea">備註</label>
+            <label for="commentArea">備註</label>
           </div>
         </div>
         <div
@@ -125,42 +125,12 @@
           >
         </div>
         <div class="col-12 col-lg-6 d-grid mt-2 mt-lg-5"">
-          <button class="btn btn-outline-primary btn-large" type="submit">確認提交</button>
+          <button id="setData" class="btn btn-outline-primary btn-large" type="submit">確認提交</button>
         </div>
       </form>
     </div>
   </div>
 </section>
 <!-- 以下是用來引入＆初始化 firebase -->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyB5IsR7ZhgDbEn0Pjm_LBoiPEkwB_zy_l8",
-    authDomain: "inshonedesign.firebaseapp.com",
-    projectId: "inshonedesign",
-    storageBucket: "inshonedesign.appspot.com",
-    messagingSenderId: "396640959287",
-    appId: "1:396640959287:web:ef52118c622deb8267f8b2",
-    measurementId: "G-7DY7PS3N37"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
-  // To Do 要存資料，然後送出給 DB
-function saveInfoToFirebase() {
-  firebase.database().ref("message").push({
-    name: 1,
-  });
-}
-
-</script>
 <script src="./contact.js"></script>
+<script type="module" src="./FirabaseManager.js"></script>
