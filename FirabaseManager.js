@@ -27,8 +27,27 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 $("#setData").click(function () {
-  setData();
-  console.log("clicked");
+  let requiredInput = document.querySelectorAll("[required]");
+  for (let i = 0; i < requiredInput.length; i++) {
+    let checkEmpty = requiredInput[i].value;
+    if (checkEmpty != "") {
+      if (i == requiredInput.length - 1) {
+        let checkEmail = document
+          .querySelector("#EmailInputFloat")
+          .value.toString();
+        if (checkEmail.includes("@") == true) {
+          setData();
+          console.log("clicked");
+        } else {
+          console.log("emailFail");
+          break;
+        }
+      }
+    } else {
+      console.log("emptyFail");
+      break;
+    }
+  }
 });
 
 // To Do 要存資料，然後送出給 DB
@@ -49,7 +68,6 @@ function setData() {
     endDate: document.querySelector("#endDate").value.toString(),
     comment: document.querySelector("#commentArea").value.toString(),
   };
-  console.log(contactInfo.company);
   // 要塞到亂數的 key 下，才不會被蓋過去
   set(ref(database, contactInfo.name + "-" + newKey), allItem);
 
