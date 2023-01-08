@@ -26,6 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+//綁定最終送出按鈕行為
 $("#setData").click(function () {
   let requiredInput = document.querySelectorAll("[required]");
   for (let i = 0; i < requiredInput.length; i++) {
@@ -35,8 +36,12 @@ $("#setData").click(function () {
         let checkEmail = document
           .querySelector("#EmailInputFloat")
           .value.toString();
-        if (checkEmail.includes("@") == true) {
+        if (
+          checkEmail.includes("@") == true &&
+          checkEmail.includes(".com") == true
+        ) {
           setData();
+          clearContact();
           console.log("clicked");
         } else {
           console.log("emailFail");
@@ -50,7 +55,7 @@ $("#setData").click(function () {
   }
 });
 
-// To Do 要存資料，然後送出給 DB
+// 存資料，然後 set 給 firebase
 function setData() {
   // Push api 會自動產生一個 childlocation 和 unique Key，只取它的 unique key assign 給 newKey
   const newKey = push(child(ref(database), "test")).key;
@@ -70,9 +75,40 @@ function setData() {
   };
   // 要塞到亂數的 key 下，才不會被蓋過去
   set(ref(database, contactInfo.name + "-" + newKey), allItem);
-
   set(
     child(ref(database, contactInfo.name + "-" + newKey), "Info"),
     contactInfo
   );
+}
+
+function clearContact() {
+  // 再告訴使用者被送出了 ＆ 刷新結帳的前台 & 移除 localstorage
+  // 先把後面需要用的名稱和 email 文字存下來
+  let userEmail = document.querySelector("#EmailInputFloat").value.toString();
+  let user = document.querySelector("#AccountInputFloat").value.toString();
+  // 移除標題
+  let clearTitle = document.querySelector(".Bag-title");
+  clearTitle.remove();
+  // 移除方案
+  let clearItems = document.querySelectorAll(".Bag-items");
+  for (let i = 0; i < clearItems.length; i++) {
+    clearItems[i].remove();
+  }
+  //移除聯絡我們
+  let clearContact = document.querySelector("#ContactSection");
+  clearContact.remove();
+  //新增已送出 hint 和選購更多方案 cta
+  let hintTemp =
+    '<section class="Empty-info row justify-content-center" id="empty-info"><div class="col-8 p-0 d-flex justify-content-center row"><h3 class="col-12 p-0 d-flex justify-content-center">' +
+    user +
+    ' 的訂單已成功送出</h3><div class="col-12 p-0 d-flex justify-content-center"><span>可以到' +
+    userEmail +
+    '查看您的方案明細，我們會盡快和您聯絡</span></div></div><div class="col-10 col-lg-6 d-grid m-1 mt-5 mb-2"><a type="btn" class="btn btn-primary btn-large" href="./index.html">挑選其他方案</a></div></section>';
+  $("content").append(hintTemp);
+  // 移除 localstorage
+  window.localStorage.removeItem("cartItem");
+  window.localStorage.setItem("cartItem", JSON.stringify([]));
+  ReCalculate();
+  //移除 nav 購物車物件
+  loadAllCartItem();
 }

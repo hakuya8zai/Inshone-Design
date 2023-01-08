@@ -10,10 +10,12 @@ AddToBagList(); //把購物車的東西列出來
 
 function AddToBagList() {
   if (LocalCartObject != null) {
+    let emptyArea = document.getElementById("empty-info");
+    emptyArea.remove();
     for (i = 0; i < LocalCartObject.length; i++) {
       let loadingItem = LocalCartObject[i];
       let loadingTemp =
-        '<section class="row justify-content-center items mb-5" id="BagSection' +
+        '<section class="row Bag-items justify-content-center items mb-5" id="BagSection' +
         i +
         '"><div class="left-pic col-6 col-lg-2 mb-3 d-flex justify-content-lg-start justify-content-center align-self-start"><img src="./Image/standard-lgImage.jpg" class="img-fluid" alt="" /></div><div class="col-10 col-lg-6 ps-4"><div class="item-title mt-3 mt-lg-0"><h4><a class="link-dark text-decoration-none" id="BagToEdit' +
         i +
