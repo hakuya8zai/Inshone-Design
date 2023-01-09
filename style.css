@@ -166,9 +166,9 @@ h6{
 
 
 /* 備註樣式修改 */
-#floatingTextarea::placeholder{
+#commentArea::placeholder{
     color: revert;
 }
-#floatingTextarea:not(:focus)::placeholder{
+#commentArea:not(:focus)::placeholder{
     color: transparent;
 }
