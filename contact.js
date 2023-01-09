@@ -21,3 +21,5 @@
     );
   });
 })();
+
+console.log(new Date());

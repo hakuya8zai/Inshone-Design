@@ -56,9 +56,10 @@ function AddToBagList() {
         '" href="#">移除</a></div></div><div class="col-10 col-lg-8 d-flex justify-content-end"></div><div class="col-10 col-lg-8 border-bottom mt-4 border-2"></div></section>';
       $("#checkout-btn").before(loadingTemp);
       BindButton(i);
-      ReCalculate();
     }
   }
+  BindRemoveButton();
+  ReCalculate();
 }
 
 function BindButton(count) {
@@ -66,6 +67,7 @@ function BindButton(count) {
   let removeItemID = ("BagSection" + count).toString();
   const removeItem = document.getElementById(removeItemID);
   $("#BagRemove" + count).click(function () {
+    console.log("removed");
     DeleteLocalItem(count);
     removeItem.classList.add("fade");
     // 因為 local 資料已刪，所以沒有真的移掉，重整後就會正常，所以先不做 status lock
@@ -75,14 +77,14 @@ function BindButton(count) {
   $("#BagToEdit" + count).click(function () {
     window.localStorage.setItem("PlanPageType", LocalCartObject[count].id);
   });
+}
+function BindRemoveButton() {
   //確認方案後，綁定最後的按鈕要填聯絡資料＆提交
   $("#GoContact").click(function () {
     let ContactSectionTemp = '<div id="ContactSection"></div>';
     $("#checkout-btn").before(ContactSectionTemp);
     $("#ContactSection").load("./contactSection.html");
     $("#checkout-btn").remove();
-    // To DO 提交後可以檢查是否已填
-    // $("#GoContact").attr("id", "submit");
   });
 }
 
