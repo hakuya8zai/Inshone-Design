@@ -5,6 +5,8 @@ console.log(LocalCartObject);
 window.onload = function () {
   console.log("loadOver");
   ChangeCheckOutButton(); //把結帳按鈕改為新增方案按鈕
+  RemoveContactFooter(); //把聯絡我們 footer disabled 掉
+  $("#GoContact").click(); //預設先打開聯絡我們區塊
 };
 AddToBagList(); //把購物車的東西列出來
 
@@ -113,4 +115,8 @@ function ChangeCheckOutButton() {
     $(checkoutBtn[i]).text("加入其他方案");
     checkoutBtn[i].href = "./index.html";
   }
+}
+
+function RemoveContactFooter() {
+  $("#contactFooter").hide();
 }

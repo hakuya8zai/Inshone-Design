@@ -3,6 +3,10 @@
 // localStorage.clear();
 // StandardPlan.NextId = -1;
 
+window.onload = function () {
+  $("#contactFooter").hide(); //把 footer contact us CTA 拔掉
+};
+
 // 一進來立刻先動態載入選項
 // 形象影片標準方案其中一個選擇 Section 的標題與描述
 class SectionDescribe {

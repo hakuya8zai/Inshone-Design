@@ -20,8 +20,7 @@ main{
 section{
     margin-top: 8%;
     margin-bottom: 8%;
-    /* border-style: solid;
-    border-color: white; */
+    margin-left: 0%;
 }
 img {  
     max-height: 100%;  
@@ -171,4 +170,9 @@ h6{
 }
 #commentArea:not(:focus)::placeholder{
     color: transparent;
+}
+
+
+.row{
+    margin-right: 0%;
 }
