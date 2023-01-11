@@ -53,7 +53,7 @@ function AddToBagList() {
         loadingItem.manageName +
         "</li><li>" +
         loadingItem.scriptName +
-        '</li></ul></div></div></div></div><div class="col-10 col-lg-8 d-flex justify-content-end"><div><a class="text-decoration-none" id="BagRemove' +
+        '</li></ul></div></div></div></div><div class="col-10 col-lg-8 d-flex justify-content-end pe-4"><div><a class="text-decoration-none" id="BagRemove' +
         i +
         '" href="#">移除</a></div></div><div class="col-10 col-lg-8 d-flex justify-content-end"></div><div class="col-10 col-lg-8 border-bottom mt-4 border-2"></div></section>';
       $("#checkout-btn").before(loadingTemp);
