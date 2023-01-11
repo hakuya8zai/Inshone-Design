@@ -21,7 +21,7 @@ function AddToBagList() {
         i +
         '"><div class="left-pic col-6 col-lg-2 mb-3 d-flex justify-content-lg-start justify-content-center align-self-start"><img src="./Image/standard-lgImage.jpg" class="img-fluid" alt="" /></div><div class="col-10 col-lg-6 ps-4"><div class="item-title mt-3 mt-lg-0"><h4><a class="link-dark text-decoration-none" id="BagToEdit' +
         i +
-        '" href="./shopping-standard.html">形象影片標準方案</a></h4></div><div class="item-spec pt-md-3 mt-lg-3 mt-xl-4 mt-xxl-5 row d-flex align-self-end"><div class="col-8"><button class="btn btn-link p-0 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBagItem' +
+        '" href="./shopping-standard.html">形象影片標準方案</a></h4></div><div class="item-spec pt-md-3 mt-lg-3 mt-xl-4 mt-xxl-5 row d-flex align-self-end"><div class="col-8 ps-0"><button class="btn btn-link p-0 d-flex" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBagItem' +
         i +
         '" aria-expanded="false" aria-controls="collapseBagItem' +
         i +
