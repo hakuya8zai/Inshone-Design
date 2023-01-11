@@ -1,4 +1,4 @@
-# E-commerce-Template
+# Inshone-Design
 
-It's a small and easy E-commerce website.
+Inshone-Design's website.
 I build it with jquery and bootstrap5.
