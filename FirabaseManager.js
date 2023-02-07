@@ -99,11 +99,11 @@ function clearContact() {
   clearContact.remove();
   //新增已送出 hint 和選購更多方案 cta
   let hintTemp =
-    '<section class="Empty-info row justify-content-center" id="empty-info"><div class="col-8 p-0 d-flex justify-content-center row"><h3 class="col-12 p-0 d-flex justify-content-center">' +
+    '<section class="Empty-info row justify-content-center mt-md-5" id="empty-info"><div class="col-8 p-0 d-flex justify-content-center row"><h3 class="col-12 p-0 d-flex justify-content-center">' +
     user +
     ' 的訂單已成功送出</h3><div class="col-12 p-0 d-flex justify-content-center"><span>可以到' +
     userEmail +
-    '查看您的方案明細，我們會盡快和您聯絡</span></div></div><div class="col-10 col-lg-6 d-grid m-1 mt-5 mb-2"><a type="btn" class="btn btn-primary btn-large" href="./service.html">挑選其他方案</a></div></section>';
+    '查看您的方案明細，我們會盡快和您聯絡</span></div></div><div class="col-10 col-lg-6 d-grid m-1 mt-5 mb-2 mb-md-5"><a type="btn" class="btn btn-primary btn-large" href="./service.html">挑選其他方案</a></div></section>';
   $("content").append(hintTemp);
   // 移除 localstorage
   window.localStorage.removeItem("cartItem");

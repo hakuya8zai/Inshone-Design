@@ -56,7 +56,7 @@ img {
 }
 .contact-Us:hover{
     cursor: pointer;
-    background-color: #343a40;
+    background-color: rgb(33,37,41);
 }
 .hc-font:hover{
     color: white;
@@ -125,8 +125,8 @@ h6{
 }
 
 .Footer-note-Intro, .Footer-note-Service{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 4%;
+    padding-bottom: 2%;
 }
 .Footer-note-Service > div > div{
     padding-bottom: 5%;
